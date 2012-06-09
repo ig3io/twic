@@ -8,9 +8,22 @@ I've just started this miniproject. It's in a very, very, early stage of develop
 
 Firts time using the Twitter API!
 
+Current features
+----------------
+* Nothing, well, yes, it tells you the time Twitter spent executing the query
+
+Use
+---
+    ./twic <search term URL friendly> <max tweets>
+
+Compiling
+---------
+    cd <path to twic>
+    make
+
 Dependencies
 ------------
-* cJSON[1]
+* [cJSON][1]
 
 License
 -------
