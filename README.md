@@ -16,3 +16,5 @@ License
 -------
 * Code of my own under the MIT License. See LICENSE for more details.
 * For cJSON license, see cJSON.h or cJSON.c for its legal notice.
+
+[1]: http://sourceforge.net/projects/cjson/
