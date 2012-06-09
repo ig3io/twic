@@ -24,6 +24,7 @@ Compiling
 Dependencies
 ------------
 * [cJSON][1]
+* libcurl
 
 License
 -------
