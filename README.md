@@ -16,7 +16,7 @@ It will print one line for each tweet found with the following structure:
 
     <user name>: <tweet text>
 
-*WARNING:* Twic still doesn't know how to deal with large responses from twitter, neither it has error handling. Work in progress. If you use more than one search term, use a low *<max tweets>* number.
+**WARNING:** Twic still doesn't know how to deal with large responses from twitter, neither it has error handling. Work in progress. If you use more than one search term, use a low *<max tweets>* number.
 
 Compiling
 ---------
