@@ -4,13 +4,13 @@
 int main(int argc, char* argv[]) {
 
     if (argc < 3) {
-        usage(argv[0]);
+        twic_usage(argv[0]);
         exit(0);
     }
 
     char query[512];
     
-    construct_query(query, argc, argv);
+    twic_construct_query(query, argc, argv);
     
     // Checking the query is well constructed
     // printf("%s\n", query);
@@ -60,7 +60,5 @@ int main(int argc, char* argv[]) {
     //printf("%s\n", out);
 
     cJSON_Delete(root);
-    free(response);
-    
-    exit(0);
+    twic_clean_exit();
 }

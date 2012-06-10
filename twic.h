@@ -4,7 +4,7 @@
 #include <stdlib.h>
 #include "cJSON.h"
 
-void usage(char* comm) {
+void twic_usage(char* comm) {
     char buff[128];
     sprintf(buff, "Usage: %s <search term> <result limit>\n", comm);
     write(STDOUT_FILENO, buff, strlen(buff)); 
@@ -27,7 +27,7 @@ void twic_write_response(void* ptr, size_t size, size_t nmemb, void* userdata) {
     }
 }
 
-void construct_query(char* query, int arg_num, char* arg_vec[]) {
+void twic_construct_query(char* query, int arg_num, char* arg_vec[]) {
     strcpy(query, "http://search.twitter.com/search.json?q=");
     char buff[256];
     int i = 1;
@@ -41,3 +41,7 @@ void construct_query(char* query, int arg_num, char* arg_vec[]) {
     strcat(query, buff);
 }
 
+void twic_clean_exit(void) {
+    free(response);
+    exit(0);
+}
