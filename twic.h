@@ -4,19 +4,23 @@
 #include <stdlib.h>
 #include "cJSON.h"
 
+char *response;
+
 void twic_usage(char* comm) {
     char buff[128];
     sprintf(buff, "Usage: %s <search term> <result limit>\n", comm);
     write(STDOUT_FILENO, buff, strlen(buff)); 
 }
 
-char* response;
+void error(char* msg) {
+    perror(msg);
+    exit(1);
+}
 
 void twic_write_response(void* ptr, size_t size, size_t nmemb, void* userdata) {
     int data_size = size*nmemb;
     response = malloc(data_size);
-    if (response < 0) ;
-        // TODO Error to handle
+    if (response < 0) error("null message");
     int i = 0;
     char* aux_rd = ptr;
     char* aux_wr = response;

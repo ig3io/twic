@@ -8,7 +8,7 @@ int main(int argc, char* argv[]) {
         exit(0);
     }
 
-    char query[512];
+    char query[1024];
     
     twic_construct_query(query, argc, argv);
     
@@ -25,8 +25,6 @@ int main(int argc, char* argv[]) {
         curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, twic_write_response);
         curl_easy_perform(curl);
 
-        //res = curl_easy_perform(curl);
-                       
         // always cleanup
         curl_easy_cleanup(curl);
     }
@@ -35,15 +33,9 @@ int main(int argc, char* argv[]) {
     // Let's parse
     cJSON *root = cJSON_Parse(response);
     
-    if (!root) {
-        // TODO error handling
-    }
-
-    //double time_elapsed = cJSON_GetObjectItem(root, "completed_in")->valuedouble;
-    //printf("Time elapsed: %f\n", time_elapsed);
+    if (!root) error("initial parsing error");
 
     cJSON *tweets = cJSON_GetObjectItem(root, "results");
-    //char *out = cJSON_Print(tweets);
 
     cJSON *a_tweet = tweets->child;
     while (a_tweet) {
@@ -56,8 +48,6 @@ int main(int argc, char* argv[]) {
         a_tweet = a_tweet->next;
         printf("%s\n", message);
     }
-    //out = cJSON_Print(a_tweet);
-    //printf("%s\n", out);
 
     cJSON_Delete(root);
     twic_clean_exit();
