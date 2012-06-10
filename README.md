@@ -25,8 +25,8 @@ Compiling
 
 Dependencies
 ------------
-* [cJSON][1]
-* libcurl installed
+* [cJSON][1] (included with Twic)
+* [libcurl][2] installed
 
 License
 -------
@@ -34,3 +34,4 @@ License
 * For cJSON license, see cJSON.h or cJSON.c for its legal notice.
 
 [1]: http://sourceforge.net/projects/cjson/
+[2]: http://curl.haxx.se/libcurl/
