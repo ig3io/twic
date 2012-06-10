@@ -39,8 +39,8 @@ int main(int argc, char* argv[]) {
         // TODO error handling
     }
 
-    double time_elapsed = cJSON_GetObjectItem(root, "completed_in")->valuedouble;
-    printf("Time elapsed: %f\n", time_elapsed);
+    //double time_elapsed = cJSON_GetObjectItem(root, "completed_in")->valuedouble;
+    //printf("Time elapsed: %f\n", time_elapsed);
 
     cJSON *tweets = cJSON_GetObjectItem(root, "results");
     //char *out = cJSON_Print(tweets);

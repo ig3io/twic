@@ -2,19 +2,21 @@ Twic
 ====
 Twitter search in your console. In C.
 
-Dev
----
+Development stage
+-----------------
 I've just started this miniproject. It's in a very, very, early stage of development.
 
 Firts time using the Twitter API!
 
-Current features
-----------------
-* Nothing, well, yes, it tells you the time Twitter spent executing the query
-
 Use
 ---
-    ./twic <search term URL friendly> <max tweets>
+    ./twic <search term URL friendly 1> ...  <search term URL friendly N> <max tweets>
+
+It will print one line for each tweet found with the following structure:
+
+    <user name>: <tweet text>
+
+*WARNING:* Twic still doesn't know how to deal with large responses from twitter, neither it has error handling. Work in progress. If you use more than one search term, use a low *<max tweets>* number.
 
 Compiling
 ---------
@@ -24,7 +26,7 @@ Compiling
 Dependencies
 ------------
 * [cJSON][1]
-* libcurl
+* libcurl installed
 
 License
 -------
