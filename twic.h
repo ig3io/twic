@@ -33,7 +33,7 @@ void twic_write_response(void* ptr, size_t size, size_t nmemb, void* userdata) {
 
 void twic_construct_query(char* query, int arg_num, char* arg_vec[]) {
     strcpy(query, "http://search.twitter.com/search.json?q=");
-    char buff[256];
+    char buff[2048];
     int i = 1;
     while (i < arg_num - 1) {
         if (i == arg_num - 2) sprintf(buff, "%s", arg_vec[i]);
@@ -45,7 +45,6 @@ void twic_construct_query(char* query, int arg_num, char* arg_vec[]) {
     strcat(query, buff);
 }
 
-void twic_clean_exit(void) {
+void twic_clean(void) {
     free(response);
-    exit(0);
 }
